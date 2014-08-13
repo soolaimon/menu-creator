@@ -1,3 +1,3 @@
 class Menu < ActiveRecord::Base
-  validates [:name, :owner], presence: true
+  validates :name, :owner, presence: true
 end
