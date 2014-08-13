@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :get_menu, only: [:show, :edit, :destroy]
+  before_action :get_menu, only: [:show, :edit, :update, :destroy]
 
   def index
     @menus = Menu.all   
@@ -15,11 +15,32 @@ class MenusController < ApplicationController
     @menu = Menu.new
   end
 
+  def create
+    @menu = Menu.new(menu_params)
+
+    if @menu.save
+      redirect_to menu_path(@menu)
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @menu.update_attributes(menu_params)
+      redirect_to menu_path(@menu)
+    else
+      render :edit
+    end
+  end
+
 
   private
 
   def menu_params
-    params.require(:menu).permit(:name, :owner, menu_items_attributes: [:id, :name, :description, :price, :vegetarian, :_destroy])
+    params.require(:menu).permit(:name, :owner, menu_items_attributes: [:name, :description, :price, :vegetarian, :id, :_destroy])
   end
 
   def get_menu

@@ -1,0 +1,22 @@
+= nested_form_for @menu do |f|
+  = f.text_field :name, placeholder: "Name", class: "form-control"
+  = f.text_field :owner, placeholder: "Owner", class: "form-control"
+
+  br
+
+  a = f.link_to_add "Add Menu Item", :menu_items, class: "btn btn-primary"
+
+  = f.fields_for(:menu_items) do |mi_form|
+    = mi_form.text_field :name, placeholder: "Item Name", class: "form-control"
+
+    = mi_form.number_field :price, placeholder: "Price", class: "form-control"
+    br
+    .form_group
+      = mi_form.label :vegetarian
+      = mi_form.check_box :vegetarian
+
+    = mi_form.text_area :description, placeholder: "Description...", class: "form-control"
+  br
+  br
+  = f.submit "Save", class: "btn btn-success"
+
