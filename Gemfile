@@ -12,6 +12,7 @@ gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'nested_form'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
@@ -28,10 +29,6 @@ end
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
-end
-
-# test gems
-group :test do
 end
 
 # production gems

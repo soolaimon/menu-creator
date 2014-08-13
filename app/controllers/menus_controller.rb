@@ -8,6 +8,13 @@ class MenusController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def new
+    @menu = Menu.new
+  end
+
 
   private
 
