@@ -1,2 +1,16 @@
+h1.page-header Create Menu
 
-.page-header.form-header
+= nested_form_for @menu do |f|
+  = f.text_field :name, placeholder: "Name", class: "form-control"
+  = f.text_field :owner, placeholder: "Owner", class: "form-control"
+
+  br
+
+  a = f.link_to_add "Add Menu Item", :menu_items, class: "btn btn-primary"
+
+  = f.fields_for(:menu_items) do |mi_form|
+    = mi_form.text_field :name, placeholder: "Item Name", class: "form-control"
+
+    = mi_form.number_field :price, placeholder: "Price", class: "form-control"
+    = mi_form.text_area :description, placeholder: "Description...", class: "form-control"
+
