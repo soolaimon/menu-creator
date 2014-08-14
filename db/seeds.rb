@@ -8,4 +8,8 @@
 
 
 Menu.create(name: "Texas Roadhouse", owner: "Dave")
+
+MenuItem.create(name: "Ribeye", price: 20.00, description: "A 20 oz. cut of our most flavorful steak served with our special peppercorn sauce and two sides (1110 cal.)", menu_id: 1)
+MenuItem.create(name: "Salad", price: 7.00, description: "Crisp hearts of romaine, fresh parmesan cheese, and made-from-scratch croutons, tossed with our zesty Caesar dressing (770 cal.)", vegetarian: true, menu_id: 1)
+
 Menu.create(name: "Chunga's", owner: "Dave")

@@ -7,6 +7,8 @@ h1.page-header.text-center.menu_header =@menu.name
       h4 = menu_item.name
       p = menu_item.description
       p = number_to_currency(menu_item.price)
+      - if menu_item.vegetarian
+        span.fa.fa-leaf
 
 
 
