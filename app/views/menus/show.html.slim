@@ -1,3 +1,12 @@
 =link_to "Edit", edit_menu_path(@menu), class: "btn btn-success btn-lg pull-right"
 h1.page-header.text-center.menu_header =@menu.name
 
+.container.menu-area
+  - @menu.menu_items.each do |menu_item|
+    .menu-item.text-center
+      h4 = menu_item.name
+      p = menu_item.description
+      p = number_to_currency(menu_item.price)
+
+
+
