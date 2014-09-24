@@ -4,6 +4,7 @@ ruby '2.1.2'
 gem 'rails', '4.1.1'
 
 # Application gems
+gem 'angularjs-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
