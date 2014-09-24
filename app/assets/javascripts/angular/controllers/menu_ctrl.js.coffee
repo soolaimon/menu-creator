@@ -1,1 +1,0 @@
-menuCreator.controller('menuCtrl')
