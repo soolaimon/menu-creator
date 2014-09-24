@@ -13,8 +13,8 @@
 //= require angular
 //= require angular-resource
 //= require angular-ui-router
+//= require app
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery_nested_form
-//= require_tree .
+//= require_tree ./angular

@@ -12,13 +12,11 @@ gem 'devise'
 gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
-gem 'mini_magick'
 gem 'nested_form'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
 gem 'slim-rails'
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 # development gems

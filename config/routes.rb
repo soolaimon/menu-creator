@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root 'menus#index'
+
+  root 'main#index'
   resources 'menus'
+
 end
