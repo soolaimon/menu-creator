@@ -13,3 +13,10 @@ MenuItem.create(name: "Ribeye", price: 20.00, description: "A 20 oz. cut of our 
 MenuItem.create(name: "Salad", price: 7.00, description: "Crisp hearts of romaine, fresh parmesan cheese, and made-from-scratch croutons, tossed with our zesty Caesar dressing (770 cal.)", vegetarian: true, menu_id: 1)
 
 Menu.create(name: "Chunga's", owner: "Dave")
+
+100.times do
+  menu = Menu.create(name: Faker::Company.name, owner: Faker::Name.name)
+  10.times do
+    MenuItem.create(name: Faker::Lorem.word, price: Random.rand(11), description: Faker::Lorem.sentence, vegetarian: [true, false].sample, menu_id: menu.id)
+  end
+end

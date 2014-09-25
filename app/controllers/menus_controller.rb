@@ -2,7 +2,13 @@ class MenusController < ApplicationController
   before_action :get_menu, only: [:show, :edit, :update, :destroy]
 
   def index
-    @menus = Menu.all   
+
+    @menus = Menu.all
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @menus}
+    end
   end
 
   def show
