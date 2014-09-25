@@ -1,5 +1,11 @@
-<div ng-controller="menuCtrl">
-  <ul>
-    <li ng-repeat="menu in menus">{{menu.name}}</li>
-  </ul>
+<div class="row" ng-controller="menuCtrl">
+  <div class="col-md-6">
+    <div id="search">
+      <input type="search" ng-model="query" placeholder="Find a Menu">
+      <button class="btn btn-sm" ng-click="search(query)">Search</button>
+    </div>
+    <div>
+      <h4 ng-repeat="menu in menus">{{menu.name}} <small>{{menu.owner}}</small></h4>
+    </div>
+  </div>
 </div>

@@ -11,6 +11,10 @@ class MenusController < ApplicationController
     end
   end
 
+  def search
+    render json: Menu.search(params[:q])
+  end
+
   def show
   end
 
