@@ -12,7 +12,11 @@ class MenusController < ApplicationController
   end
 
   def search
-    render json: Menu.search(params[:q])
+    menus = [] 
+    Menu.search(params[:q]).each do |menu|
+      menus << {name: menu.name, owner: menu.owner, menu_items: menu.menu_items}
+    end
+    render json: menus
   end
 
   def show

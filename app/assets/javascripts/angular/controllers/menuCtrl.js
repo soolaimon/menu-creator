@@ -7,11 +7,4 @@ menuCreator.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) 
         console.log($scope.menus[0])
       })
     }
-
-  // $http.get('/menus.json').success(function(menus){
-  //   $scope.menus = menus;
-  // });
-
-
-
 }]);
