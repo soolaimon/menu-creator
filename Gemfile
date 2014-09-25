@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
+gem 'ffaker'
 gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -37,5 +38,4 @@ group :production do
 end
 
 group :development, :test do
-  gem 'ffaker'
 end
