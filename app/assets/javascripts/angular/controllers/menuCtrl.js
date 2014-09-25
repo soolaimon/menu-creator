@@ -4,7 +4,12 @@ menuCreator.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) 
     $http.get('/search', { params: {q: query}})
       .success(function(menus){
         $scope.menus = menus
-        console.log($scope.menus[0])
       })
     }
+
+    $scope.setMenu = function (menu) {
+      $scope.selectedMenu = menu;
+    }
+
+
 }]);

@@ -1,11 +1,26 @@
 <div class="row" ng-controller="menuCtrl">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div id="search">
       <input type="search" ng-model="query" placeholder="Find a Menu">
       <button class="btn btn-sm" ng-click="search(query)">Search</button>
     </div>
     <div>
-      <h4 ng-repeat="menu in menus">{{menu.name}} <small>{{menu.owner}}</small></h4>
+      <h4 ng-repeat="menu in menus" ng-click="setMenu(menu)">{{menu.name}} <small>{{menu.owner}}</small></h4>
     </div>
   </div>
+  
+  <div class="col-md-4">
+    <h1>{{selectedMenu.name}}</h1>
+    <div ng-repeat="item in selectedMenu.menu_items | filter:vegetarian">
+      <h4>{{item.name}} <small ng-if="item.vegetarian==true">**Vegetarian**</small></h4>
+      <p>{{item.description}}</p>
+      <p>{{item.price | currency}}</p>
+      <hr>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    
+  </div>
+
 </div>
