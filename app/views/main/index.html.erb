@@ -10,17 +10,23 @@
   </div>
   
   <div class="col-md-4">
-    <h1>{{selectedMenu.name}}</h1>
-    <div ng-repeat="item in selectedMenu.menu_items | filter:vegetarian">
-      <h4>{{item.name}} <small ng-if="item.vegetarian==true">**Vegetarian**</small></h4>
-      <p>{{item.description}}</p>
-      <p>{{item.price | currency}}</p>
-      <hr>
-    </div>
+    <div ng-if="selectedMenu">
+      <h1>{{selectedMenu.name}}</h1>
+      <div ng-repeat="item in selectedMenu.menu_items | filter: menuFilters ">
+        <h4>{{item.name}} <small ng-if="item.vegetarian==true">**Vegetarian**</small></h4>
+        <p>{{item.description}}</p>
+        <p>{{item.price | currency}}</p>
+        <hr>
+      </div>
+    </div>  
   </div>
 
-  <div class="col-md-4">
-    
+  <div class="col-md-4" id="filters">
+    <h1>Filters</h1>
+    <button ng-click="menuFilters={}">Reset Filters</button>
+    <br />
+    <label for="vegetarian">Vegetarian</label>
+    <input type="checkbox" ng-click="toggleFilter('vegetarian')">
   </div>
 
 </div>
